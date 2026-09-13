@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vývoj výstupních periferií – Kvíz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- POZADÍ -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- HLAVNÍ OBSAH -->
+    <main>
+
+        <header>
+            <div class="badge">INTERAKTIVNÍ KVÍZ</div>
+
+            <h1>
+                Vývoj výstupních<br>
+                <span>periferií počítačů</span>
+            </h1>
+
+            <p class="subtitle">
+                Vyber kartu, odpověz na otázku a zjisti, kolik toho víš.
+            </p>
+        </header>
+
+
+        <!-- INFORMACE -->
+        <div class="info">
+
+            <div class="info-item">
+                <span class="info-label">BODY</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span>POSTUP</span>
+                    <span id="progressText">0 / 10</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">ZBÝVÁ KARET</span>
+                <strong id="remaining">10</strong>
+            </div>
+
+        </div>
+
+
+        <!-- KARTY -->
+        <section id="cards" class="cards">
+
+            <button class="card" data-id="0">
+                <div class="card-number">01</div>
+                <div class="card-icon">🖥️</div>
+                <span>MONITOR</span>
+            </button>
+
+            <button class="card" data-id="1">
+                <div class="card-number">02</div>
+                <div class="card-icon">🖨️</div>
+                <span>TISKÁRNA</span>
+            </button>
+
+            <button class="card" data-id="2">
+                <div class="card-number">03</div>
+                <div class="card-icon">💡</div>
+                <span>DISPLEJ</span>
+            </button>
+
+            <button class="card" data-id="3">
+                <div class="card-number">04</div>
+                <div class="card-icon">⚡</div>
+                <span>LASER</span>
+            </button>
+
+            <button class="card" data-id="4">
+                <div class="card-number">05</div>
+                <div class="card-icon">🔍</div>
+                <span>ROZLIŠENÍ</span>
+            </button>
+
+            <button class="card" data-id="5">
+                <div class="card-number">06</div>
+                <div class="card-icon">✨</div>
+                <span>OLED</span>
+            </button>
+
+            <button class="card" data-id="6">
+                <div class="card-number">07</div>
+                <div class="card-icon">📐</div>
+                <span>PLOTTER</span>
+            </button>
+
+            <button class="card" data-id="7">
+                <div class="card-number">08</div>
+                <div class="card-icon">📖</div>
+                <span>E-INK</span>
+            </button>
+
+            <button class="card" data-id="8">
+                <div class="card-number">09</div>
+                <div class="card-icon">🧊</div>
+                <span>3D TISK</span>
+            </button>
+
+            <button class="card" data-id="9">
+                <div class="card-number">10</div>
+                <div class="card-icon">🕰️</div>
+                <span>HISTORIE</span>
+            </button>
+
+        </section>
+
+
+        <!-- OTÁZKA -->
+        <section id="questionBox" class="question-box hidden">
+
+            <div class="question-top">
+
+                <div>
+                    <span class="small-label">AKTUÁLNÍ OTÁZKA</span>
+                    <p id="questionNumber"></p>
+                </div>
+
+                <div class="question-decoration">?</div>
+
+            </div>
+
+            <div class="question-content">
+
+                <h2 id="question"></h2>
+
+                <button id="showAnswer" class="main-button">
+                    Zobrazit odpověď
+                </button>
+
+                <div id="answerBox" class="answer-box hidden">
+
+                    <div class="answer-title">
+                        <span>💡</span>
+                        SPRÁVNÁ ODPOVĚĎ
+                    </div>
+
+                    <p id="answer"></p>
+
+                    <div class="result-buttons">
+
+                        <button id="correct" class="correct-button">
+                            ✓ Správně
+                        </button>
+
+                        <button id="wrong" class="wrong-button">
+                            ✕ Špatně
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button id="back" class="back-button">
+                    ← Zpět na karty
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- KONEC -->
+        <section id="finishBox" class="finish-box hidden">
+
+            <div class="trophy">🏆</div>
+
+            <span class="small-label">KVÍZ DOKONČEN</span>
+
+            <h2>Skvělá práce!</h2>
+
+            <p>
+                Tvoje skóre:
+            </p>
+
+            <div class="final-score">
+                <strong id="finalScore">0</strong>
+                <span>/ 10</span>
+            </div>
+
+            <p id="resultMessage" class="result-message"></p>
+
+            <button id="restart" class="main-button">
+                ↻ Hrát znovu
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Vývoj výstupních periferií počítačů • Interaktivní část prezentace
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
